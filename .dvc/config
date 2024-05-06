@@ -1,0 +1,4 @@
+[core]
+    remote = my_remote
+['remote "my_remote"']
+    url = C:\Users\nm.gavrikova\research\ModelOps\DVC_test\dvc_local_storage
