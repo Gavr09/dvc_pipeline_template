@@ -1,0 +1,16 @@
+schema: '2.0'
+stages:
+  prepare_data:
+    cmd: python .\src\data\prepare.py .\data\raw\data.csv
+    deps:
+    - path: .\data\raw\data.csv\
+      hash: md5
+      md5: 52d9025be98590621d3a7c49f25b9661
+      size: 212386
+    - path: .\src\data\prepare.py
+      hash: md5
+      md5: 68e90a47d084ed8d49e71ceded118e00
+      size: 1393
+    params:
+      params.yaml:
+        prepare_data.random_state: 42
