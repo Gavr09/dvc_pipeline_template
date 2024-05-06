@@ -1,0 +1,8 @@
+stages:
+  prepare_data:
+    cmd: python .\src\data\prepare.py .\data\raw\data.csv
+    deps:
+    - .\data\raw\data.csv\
+    - .\src\data\prepare.py
+    params:
+    - prepare_data.random_state

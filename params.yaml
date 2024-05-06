@@ -1,0 +1,6 @@
+prepare_data:
+  random_state: 42
+
+train_model:
+  alpha: 0.5
+
