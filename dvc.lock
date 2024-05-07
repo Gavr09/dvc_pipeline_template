@@ -14,3 +14,27 @@ stages:
     params:
       params.yaml:
         prepare_data.random_state: 42
+  train_model:
+    cmd: python .\src\models\train.py .\data\processed\
+    deps:
+    - path: .\data\processed\
+      hash: md5
+      md5: 549131b1eeec5ae3a395866ef89de687.dir
+      size: 209248
+      nfiles: 4
+    params:
+      params.yaml:
+        train_model.alpha: 0.5
+  evaluate:
+    cmd: python .\src\models\evaluate.py .\data\processed\ .\models\
+    deps:
+    - path: .\data\processed\
+      hash: md5
+      md5: 549131b1eeec5ae3a395866ef89de687.dir
+      size: 209248
+      nfiles: 4
+    - path: .\models\
+      hash: md5
+      md5: e0dcb5985a575b6ef4be43fc16ea1543.dir
+      size: 706
+      nfiles: 1

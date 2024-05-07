@@ -6,3 +6,16 @@ stages:
     - .\src\data\prepare.py
     params:
     - prepare_data.random_state
+    
+  train_model:
+    cmd: python .\src\models\train.py .\data\processed\
+    deps:
+    - .\data\processed\
+    params:
+    - train_model.alpha
+    
+  evaluate:
+    cmd: python .\src\models\evaluate.py .\data\processed\ .\models\
+    deps:
+    - .\data\processed\
+    - .\models\
