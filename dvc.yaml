@@ -23,3 +23,5 @@ stages:
     deps:
     - .\data\processed\
     - .\models\
+    outs:
+    - .\reports\

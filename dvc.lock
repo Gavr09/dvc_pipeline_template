@@ -50,3 +50,9 @@ stages:
       md5: e0dcb5985a575b6ef4be43fc16ea1543.dir
       size: 706
       nfiles: 1
+    outs:
+    - path: .\reports\
+      hash: md5
+      md5: d30cea2beed9644b76acfb3e477fe817.dir
+      size: 114
+      nfiles: 1
