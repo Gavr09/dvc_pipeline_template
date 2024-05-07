@@ -4,6 +4,8 @@ stages:
     deps:
     - .\data\raw\data.csv\
     - .\src\data\prepare.py
+    outs:
+    - .\data\processed\
     params:
     - prepare_data.random_state
     
@@ -11,6 +13,8 @@ stages:
     cmd: python .\src\models\train.py .\data\processed\
     deps:
     - .\data\processed\
+    outs:
+    - .\models\
     params:
     - train_model.alpha
     

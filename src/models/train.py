@@ -33,7 +33,7 @@ def main():
     data_path = sys.argv[1]
 
     if not os.path.exists(data_path):
-        sys.stderr.write("PATH_TRAIN is not exist!\n")
+        sys.stderr.write("data_path is not exist!\n")
         sys.exit(1)
 
     # path for outputs

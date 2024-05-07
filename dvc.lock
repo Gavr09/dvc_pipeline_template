@@ -9,11 +9,17 @@ stages:
       size: 212386
     - path: .\src\data\prepare.py
       hash: md5
-      md5: 68e90a47d084ed8d49e71ceded118e00
-      size: 1393
+      md5: d434b89aab764d66e9e687c5bb123792
+      size: 1392
     params:
       params.yaml:
         prepare_data.random_state: 42
+    outs:
+    - path: .\data\processed\
+      hash: md5
+      md5: 549131b1eeec5ae3a395866ef89de687.dir
+      size: 209248
+      nfiles: 4
   train_model:
     cmd: python .\src\models\train.py .\data\processed\
     deps:
@@ -25,6 +31,12 @@ stages:
     params:
       params.yaml:
         train_model.alpha: 0.5
+    outs:
+    - path: .\models\
+      hash: md5
+      md5: e0dcb5985a575b6ef4be43fc16ea1543.dir
+      size: 706
+      nfiles: 1
   evaluate:
     cmd: python .\src\models\evaluate.py .\data\processed\ .\models\
     deps:
